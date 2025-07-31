@@ -1,7 +1,60 @@
 // storage.js - Funções de salvar e carregar dados
 const MODO_TESTE = true;  // ✅ Quando for integrar com banco, basta trocar para false
 
-let clientes = [];
+let clientes = [
+        {
+          id: 1,
+          nome: "Cliente A",
+          nomeFantasia: "Fantasia A",
+          cnpj: "00.000.000/0001-00",
+          inscricaoEstadual: "",
+          logradouro: "",
+          municipio: "",
+          uf: "",
+          cep: "",
+          telefone: "",
+          email: ""
+        },
+        {
+          id: 2,
+          nome: "Cliente B",
+          nomeFantasia: "Fantasia B",
+          cnpj: "11.111.111/0001-11",
+          inscricaoEstadual: "",
+          logradouro: "",
+          municipio: "",
+          uf: "",
+          cep: "",
+          telefone: "",
+          email: ""
+        },
+        {
+          id: 3,
+          nome: "Cliente C",
+          nomeFantasia: "Fantasia C",
+          cnpj: "22.222.222/0001-22",
+          inscricaoEstadual: "",
+          logradouro: "",
+          municipio: "",
+          uf: "",
+          cep: "",
+          telefone: "",
+          email: ""
+        },
+        {
+          id: 4,
+          nome: "Cliente D",
+          nomeFantasia: "Fantasia D",
+          cnpj: "33.333.333/0001-33",
+          inscricaoEstadual: "",
+          logradouro: "",
+          municipio: "",
+          uf: "",
+          cep: "",
+          telefone: "",
+          email: ""
+        }
+      ];
 let produtos = [];
 let pedidos = [];
 let vendedores = [];
