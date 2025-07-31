@@ -1,0 +1,4 @@
+codigo;nome;preco;grupo
+1001;Arroz 5kg;22,90;Alimentos
+1002;Feijão Preto;8,50;
+1003;Açúcar 1kg;5,25;

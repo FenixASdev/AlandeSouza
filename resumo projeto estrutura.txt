@@ -1,0 +1,13 @@
+/index.html
+/manifest.json
+/service-worker.js
+/js/
+   main.js
+   clientes.js
+   produtos.js
+   pedidos.js
+   relatorios.js
+   storage.js
+/icon-192.png
+/icon-512.png
+/style.css (se tiver CSS separado)
