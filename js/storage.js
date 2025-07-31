@@ -23,74 +23,69 @@ function salvarLocal() {
 
 /**
  * Carrega os dados do localStorage ou da base de dados.
- * Insere clientes fictícios se estiver vazio.
+ * Insere clientes fictícios sempre em modo de teste.
  */
 function carregarLocal() {
   if (MODO_TESTE) {
-    clientes = JSON.parse(localStorage.getItem("clientes") || "[]");
+    clientes = [
+      {
+        id: 1,
+        nome: "Cliente A",
+        nomeFantasia: "Fantasia A",
+        cnpj: "00.000.000/0001-00",
+        inscricaoEstadual: "",
+        logradouro: "",
+        municipio: "",
+        uf: "",
+        cep: "",
+        telefone: "",
+        email: ""
+      },
+      {
+        id: 2,
+        nome: "Cliente B",
+        nomeFantasia: "Fantasia B",
+        cnpj: "11.111.111/0001-11",
+        inscricaoEstadual: "",
+        logradouro: "",
+        municipio: "",
+        uf: "",
+        cep: "",
+        telefone: "",
+        email: ""
+      },
+      {
+        id: 3,
+        nome: "Cliente C",
+        nomeFantasia: "Fantasia C",
+        cnpj: "22.222.222/0001-22",
+        inscricaoEstadual: "",
+        logradouro: "",
+        municipio: "",
+        uf: "",
+        cep: "",
+        telefone: "",
+        email: ""
+      },
+      {
+        id: 4,
+        nome: "Cliente D",
+        nomeFantasia: "Fantasia D",
+        cnpj: "33.333.333/0001-33",
+        inscricaoEstadual: "",
+        logradouro: "",
+        municipio: "",
+        uf: "",
+        cep: "",
+        telefone: "",
+        email: ""
+      }
+    ];
     produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
     pedidos = JSON.parse(localStorage.getItem("pedidos") || "[]");
     vendedores = JSON.parse(localStorage.getItem("vendedores") || "[]");
 
-    // Inserir clientes fictícios apenas se não houver nenhum salvo
-    if (clientes.length === 0) {
-      clientes = [
-        {
-          id: 1,
-          nome: "Cliente A",
-          nomeFantasia: "Fantasia A",
-          cnpj: "00.000.000/0001-00",
-          inscricaoEstadual: "",
-          logradouro: "",
-          municipio: "",
-          uf: "",
-          cep: "",
-          telefone: "",
-          email: ""
-        },
-        {
-          id: 2,
-          nome: "Cliente B",
-          nomeFantasia: "Fantasia B",
-          cnpj: "11.111.111/0001-11",
-          inscricaoEstadual: "",
-          logradouro: "",
-          municipio: "",
-          uf: "",
-          cep: "",
-          telefone: "",
-          email: ""
-        },
-        {
-          id: 3,
-          nome: "Cliente C",
-          nomeFantasia: "Fantasia C",
-          cnpj: "22.222.222/0001-22",
-          inscricaoEstadual: "",
-          logradouro: "",
-          municipio: "",
-          uf: "",
-          cep: "",
-          telefone: "",
-          email: ""
-        },
-        {
-          id: 4,
-          nome: "Cliente D",
-          nomeFantasia: "Fantasia D",
-          cnpj: "33.333.333/0001-33",
-          inscricaoEstadual: "",
-          logradouro: "",
-          municipio: "",
-          uf: "",
-          cep: "",
-          telefone: "",
-          email: ""
-        }
-      ];
-      localStorage.setItem("clientes", JSON.stringify(clientes));
-    }
-
+    localStorage.setItem("clientes", JSON.stringify(clientes));
   } else {
     // 🔗 Aqui entra a integração para carregar dados do banco.
   }
@@ -115,7 +110,7 @@ function inicializarVendedorPadrao() {
       nome: "Admin",
       telefone: "",
       email: "admin@teste.com",
-      senha: "1234"  // ✅ senha separada do email
+      senha: "1234"
     });
     salvarLocal();
   }
