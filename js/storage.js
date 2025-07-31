@@ -1,7 +1,40 @@
 // storage.js - Funções de salvar e carregar dados
 const MODO_TESTE = true;  // ✅ Quando for integrar com banco, basta trocar para false
 
-let clientes = [
+let clientes = [];
+let produtos = [];
+let pedidos = [];
+let vendedores = [];
+let vendedorLogado = null;
+
+/**
+ * Salva os dados no localStorage ou futura base de dados.
+ */
+function salvarLocal() {
+  if (MODO_TESTE) {
+    localStorage.setItem("clientes", JSON.stringify(clientes));
+    localStorage.setItem("produtos", JSON.stringify(produtos));
+    localStorage.setItem("pedidos", JSON.stringify(pedidos));
+    localStorage.setItem("vendedores", JSON.stringify(vendedores));
+  } else {
+    // 🔗 Aqui entra a integração com Google Sheets ou Firebase.
+  }
+}
+
+/**
+ * Carrega os dados do localStorage ou da base de dados.
+ * Insere clientes fictícios se estiver vazio.
+ */
+function carregarLocal() {
+  if (MODO_TESTE) {
+    clientes = JSON.parse(localStorage.getItem("clientes") || "[]");
+    produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
+    pedidos = JSON.parse(localStorage.getItem("pedidos") || "[]");
+    vendedores = JSON.parse(localStorage.getItem("vendedores") || "[]");
+
+    // Inserir clientes fictícios apenas se não houver nenhum salvo
+    if (clientes.length === 0) {
+      clientes = [
         {
           id: 1,
           nome: "Cliente A",
@@ -55,35 +88,9 @@ let clientes = [
           email: ""
         }
       ];
-let produtos = [];
-let pedidos = [];
-let vendedores = [];
-let vendedorLogado = null;
+      localStorage.setItem("clientes", JSON.stringify(clientes));
+    }
 
-/**
- * Salva os dados no localStorage ou futura base de dados.
- */
-function salvarLocal() {
-  if (MODO_TESTE) {
-    localStorage.setItem("clientes", JSON.stringify(clientes));
-    localStorage.setItem("produtos", JSON.stringify(produtos));
-    localStorage.setItem("pedidos", JSON.stringify(pedidos));
-    localStorage.setItem("vendedores", JSON.stringify(vendedores));
-  } else {
-    // 🔗 Aqui entra a integração com Google Sheets ou Firebase.
-    // Exemplo: enviar via API usando fetch() ou SDK do Firebase.
-  }
-}
-
-/**
- * Carrega os dados do localStorage ou da base de dados.
- */
-function carregarLocal() {
-  if (MODO_TESTE) {
-    clientes = JSON.parse(localStorage.getItem("clientes") || "[]");
-    produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
-    pedidos = JSON.parse(localStorage.getItem("pedidos") || "[]");
-    vendedores = JSON.parse(localStorage.getItem("vendedores") || "[]");
   } else {
     // 🔗 Aqui entra a integração para carregar dados do banco.
   }
