@@ -122,13 +122,5 @@ window.onload = () => {
     salvarLocal();
   }
 
-  if (produtos.length === 0) {
-    produtos = [
-      {id:1, codigo:"1001", nome:"Produto A", preco:10},
-      {id:2, codigo:"1002", nome:"Produto B", preco:20}
-    ];
-    salvarLocal();
-  }
-
   telaLogin();
 };
