@@ -1,11 +1,13 @@
 {
   "name": "Sistema de Pedidos",
   "short_name": "Pedidos",
-  "start_url": "index.html",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2196f3",
   "orientation": "portrait",
+  "description": "App de pedidos com cadastro de clientes, produtos e geração de relatórios.",
   "icons": [
     {
       "src": "icon-192.png",
